@@ -6,6 +6,7 @@ import (
 	"crypto/elliptic"
 	"crypto/rand"
 	"fmt"
+	"github.com/go-acme/lego/v4/certcrypto"
 	"github.com/go-acme/lego/v4/certificate"
 	"github.com/go-acme/lego/v4/challenge/http01"
 	"github.com/go-acme/lego/v4/lego"
@@ -89,6 +90,9 @@ var RegisterCmd = &cobra.Command{
 	Short: "leogo registration",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		config := lego.NewConfig(&myUser)
+		config.CADirURL = "https://acme-staging-v02.api.letsencrypt.org/directory"
+		config.Certificate.KeyType = certcrypto.RSA2048
+
 		client, err := lego.NewClient(config)
 		if err != nil {
 			fmt.Println("fail to create new client of lego:" + err.Error())
