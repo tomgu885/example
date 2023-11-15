@@ -7,6 +7,7 @@ package cmd
 import (
 	"os"
 	"tom_example/cmd/redis_message"
+	"tom_example/cmd/simple_gin"
 	"tom_example/global"
 
 	"github.com/spf13/cobra"
@@ -49,4 +50,6 @@ func init() {
 
 	rootCmd.AddCommand(redis_message.ListenerCmd)
 	rootCmd.AddCommand(redis_message.ProducerCmd)
+
+	rootCmd.AddCommand(simple_gin.GinCmd)
 }
