@@ -6,6 +6,7 @@ package cmd
 
 import (
 	"os"
+	"tom_example/cmd/cert_lego"
 	"tom_example/cmd/redis_message"
 	"tom_example/cmd/simple_gin"
 	"tom_example/global"
@@ -52,4 +53,7 @@ func init() {
 	rootCmd.AddCommand(redis_message.ProducerCmd)
 
 	rootCmd.AddCommand(simple_gin.GinCmd)
+
+	rootCmd.AddCommand(cert_lego.RegisterCmd)
+	rootCmd.AddCommand(cert_lego.HttpChallengeCmd)
 }
