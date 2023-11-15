@@ -124,6 +124,8 @@ var RegisterCmd = &cobra.Command{
 			fmt.Println("failed to obtain:", err.Error())
 			return err
 		}
+
+		fmt.Println("get certificate success")
 		saveDir := "/Users/tom/golang/example/temp"
 		err = os.WriteFile(filepath.Join(saveDir, "fullchain.cer"), certificates.Certificate, os.ModePerm)
 		if err != nil {
@@ -131,6 +133,7 @@ var RegisterCmd = &cobra.Command{
 			return err
 		}
 
+		fmt.Println("finished")
 		return nil
 	},
 }
