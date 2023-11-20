@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"github.com/spf13/cobra"
-	"math/rand"
 	"time"
 	"tom_example/global"
 )
@@ -23,8 +22,8 @@ var ProducerCmd = &cobra.Command{
 				fmt.Printf("sent %d\n", i)
 			}
 
-			u := rand.Int63n(100) + 50
-			time.Sleep(time.Duration(u) * time.Millisecond)
+			//u := rand.Int63n(100) + 50
+			//time.Sleep(time.Duration(u) * time.Millisecond)
 
 		}
 
